@@ -1,6 +1,6 @@
 package com.virtusa.comparable.model;
 
-public class Employee {
+public class Employee  implements Comparable<Employee>{
 
 	private int id;
 	private String name;
@@ -33,6 +33,17 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
+	@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		return Integer.compare(this.id, o.id);
+	}
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+	
+	
 	
 	
 }
