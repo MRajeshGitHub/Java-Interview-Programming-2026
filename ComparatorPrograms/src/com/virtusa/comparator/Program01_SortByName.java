@@ -92,7 +92,8 @@ public class Program01_SortByName {
 		
 		System.out.println("---------Comparator.comparing() (Modern Java)---------");
 		
-		Comparator<Employee> comp= Comparator.comparing(Employee::getName);
+		Comparator<Employee> comp= Comparator.comparing(Employee::getId).reversed();
+		employees.sort(comp);
 		employees.forEach(System.out::println);
 		
 	}
