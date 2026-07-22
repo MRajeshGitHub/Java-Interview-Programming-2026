@@ -42,6 +42,17 @@ public class Program03_ComparingDoubleBySalary {
 		System.out.println("After thenComparing() Multiple Fields");
 
 		employees.forEach(System.out::println);
+		System.out.println("-------------");
+		
+		////nullsFirst() & nullsLast()          
+		
+		employees.sort(Comparator.nullsFirst(Comparator.comparing(Employee::getName)));
+		employees.forEach(System.out::println);
+		System.out.println("============");
+		
+		employees.sort(Comparator.nullsLast(Comparator.comparing(Employee::getName)));
+		employees.forEach(System.out::println);
+		
 
 	}
 }
