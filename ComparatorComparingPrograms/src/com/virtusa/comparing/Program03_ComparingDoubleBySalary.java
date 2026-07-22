@@ -27,5 +27,12 @@ public class Program03_ComparingDoubleBySalary {
 		System.out.println("After Sorting");
 
 		employees.forEach(System.out::println);
+		
+		
+		//// reversed() with comparing
+		employees.sort(Comparator.comparingDouble(Employee::getSalary).reversed()); 
+		System.out.println("After Sorting Reversed");
+
+		employees.forEach(System.out::println);
 	}
 }
