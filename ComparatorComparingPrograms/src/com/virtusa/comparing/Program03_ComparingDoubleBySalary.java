@@ -34,5 +34,14 @@ public class Program03_ComparingDoubleBySalary {
 		System.out.println("After Sorting Reversed");
 
 		employees.forEach(System.out::println);
+		
+		//// thenComparing() Multiple Fields
+	
+		employees.sort(Comparator.comparing(Employee::getSalary).thenComparing(Employee::getName));
+		
+		System.out.println("After thenComparing() Multiple Fields");
+
+		employees.forEach(System.out::println);
+
 	}
 }
