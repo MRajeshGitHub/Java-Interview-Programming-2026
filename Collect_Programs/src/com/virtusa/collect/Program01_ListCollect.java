@@ -1,9 +1,11 @@
 package com.virtusa.collect;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Program01_ListCollect {
 
@@ -34,6 +36,12 @@ public class Program01_ListCollect {
 		List<String> list2 = fruits.stream().map(String::toUpperCase).toList();
 		System.out.println(list2);
 
+		//Add new element in old list
+		List<String> list3=new ArrayList<>(newList);
+		list3.add("Goava");
+		System.out.println(list3);
+				
+				
 	}
 
 }
