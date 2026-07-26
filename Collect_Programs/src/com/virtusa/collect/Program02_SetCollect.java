@@ -13,15 +13,11 @@ public class Program02_SetCollect {
 		// print using set with collect and collectors
 		Set<String> collect = fruits.stream().collect(Collectors.toSet());
 		System.out.println(collect);// [Apple, Mango, Orange, Banana]
-		
-		//Uppercase + Set
-		
+
+		// Uppercase + Set
+
 		Set<String> collect3 = fruits.stream().map(String::toUpperCase).collect(Collectors.toSet());
-		System.out.println(collect3);//[APPLE, MANGO, BANANA, ORANGE]
-		
-	
-		
-		
+		System.out.println(collect3);// [APPLE, MANGO, BANANA, ORANGE]
 
 		// Even Number check using set
 
@@ -36,8 +32,6 @@ public class Program02_SetCollect {
 
 		List<Integer> list = nums.stream().filter(i -> i % 2 == 0).toList();
 		System.out.println(nums);
-		
-		
 
 	}
 }
