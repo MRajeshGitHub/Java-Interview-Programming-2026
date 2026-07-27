@@ -16,7 +16,16 @@ public class Program05_SummingInt {
 
 		);
 
-		Double sum = employees.stream().collect(Collectors.summingDouble(Employee::getSalary));
-		System.out.println("Salary sum : " + sum);
+		//sum
+		Integer sum = employees.stream().collect(Collectors.summingInt(Employee::getSalary));
+		System.out.println("Salary sum : " + sum);//Salary sum : 230000
+		
+		//Ave
+		Double avg = employees.stream().collect(Collectors.averagingInt(Employee::getSalary));
+		System.out.println("Salary AVG : " + avg);//alary AVG : 57500.0
+		
+		
+
+
 	}
 }
