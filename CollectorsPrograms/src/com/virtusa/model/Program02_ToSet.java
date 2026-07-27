@@ -1,6 +1,7 @@
 package com.virtusa.model;
 
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -21,5 +22,9 @@ public class Program02_ToSet {
 
 		Set<String> uppercase = cities.stream().map(String::toUpperCase).collect(Collectors.toSet());
 		System.out.println("Unique UpperCase Set    : " + uppercase);
+
+		// For Insertion order
+		LinkedHashSet<String> list = cities.stream().collect(Collectors.toCollection(java.util.LinkedHashSet::new));
+		System.out.println(list);
 	}
 }
