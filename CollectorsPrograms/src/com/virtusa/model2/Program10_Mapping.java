@@ -18,8 +18,12 @@ public class Program10_Mapping {
 
 		Map<String, List<String>> maping = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
 				Collectors.mapping(Employee::getName, Collectors.toList())));
-		
-		System.out.println(maping);//{HR=[Sunil, Neha], IT=[Rajesh, Amit], Admin=[Pooja]}
 
+		System.out.println(maping);// {HR=[Sunil, Neha], IT=[Rajesh, Amit], Admin=[Pooja]}
+
+		// simple mapping print
+		List<String> empList = employees.stream().collect(Collectors.mapping(Employee::getName, Collectors.toList()));
+
+		System.out.println(empList);
 	}
 }
