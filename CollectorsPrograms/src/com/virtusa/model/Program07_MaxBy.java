@@ -20,18 +20,25 @@ public class Program07_MaxBy {
 		Optional<Employee> maxBy = employees.stream()
 				.collect(Collectors.maxBy(Comparator.comparing(Employee::getSalary)));
 
-		//System.out.println(maxBy);
-		
-		maxBy.ifPresent(System.out::println);
-		
-		//Collectors.minBy
-		
-		Optional<Employee> minBy = employees.stream().collect(Collectors.minBy(Comparator.comparing(Employee::getSalary)));
-		
-		minBy.ifPresent(System.out::println);//Employee [id=103, name=Sunil, salary=45000]
-		
-		
-		
+		// System.out.println(maxBy);
+
+		maxBy.ifPresent(System.out::println);// Employee [id=104, name=Neha, salary=70000]
+
+		// Collectors.minBy
+
+		Optional<Employee> minBy = employees.stream()
+				.collect(Collectors.minBy(Comparator.comparing(Employee::getSalary)));
+
+		minBy.ifPresent(System.out::println);// Employee [id=103, name=Sunil, salary=45000]
+
+		// 2nd way both programs
+
+		System.out.println("2nd way to process min");
+		Optional<Employee> min = employees.stream().min(Comparator.comparing(Employee::getSalary));
+		min.ifPresent(System.out::println);
+		System.out.println("2nd way to process max");
+		Optional<Employee> max = employees.stream().max(Comparator.comparing(Employee::getSalary));
+		max.ifPresent(System.out::println);
 
 	}
 }
