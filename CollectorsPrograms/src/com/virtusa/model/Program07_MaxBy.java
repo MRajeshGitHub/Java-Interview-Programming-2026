@@ -23,6 +23,15 @@ public class Program07_MaxBy {
 		//System.out.println(maxBy);
 		
 		maxBy.ifPresent(System.out::println);
+		
+		//Collectors.minBy
+		
+		Optional<Employee> minBy = employees.stream().collect(Collectors.minBy(Comparator.comparing(Employee::getSalary)));
+		
+		minBy.ifPresent(System.out::println);//Employee [id=103, name=Sunil, salary=45000]
+		
+		
+		
 
 	}
 }
