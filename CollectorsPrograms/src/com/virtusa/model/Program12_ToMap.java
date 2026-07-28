@@ -8,38 +8,30 @@ import java.util.stream.Collectors;
 public class Program12_ToMap {
 
 	public static void main(String[] args) {
-		
+
 		List<Employee> employees = Arrays.asList(
 
-                new Employee(101, "Rajesh", 50000),
-                new Employee(102, "Amit", 65000),
-                new Employee(103, "Sunil", 45000),
-                new Employee(104, "Neha", 70000)
+				new Employee(101, "Rajesh", 50000), new Employee(102, "Amit", 65000), new Employee(103, "Sunil", 45000),
+				new Employee(104, "Neha", 70000)
 
-        );
-		
+		);
+
 		Map<Integer, Employee> collect = employees.stream().collect(Collectors.toMap(Employee::getId, e -> e));
-				collect.forEach((i,e)->System.out.println(i+"--"+e));
-				
-				//Highest Salary Map
-				Map<String, Integer> salaryMap = employees.stream()
+		collect.forEach((i, e) -> System.out.println(i + "--" + e));
 
-				        .collect(Collectors.toMap(
-				                Employee::getName,
-				                Employee::getSalary
-				        ));
-				
-				System.out.println(salaryMap);
-				
-				//Employee Id → Salary Map
-				
-				Map<Integer, Integer> salaryMap1 = employees.stream()
+		// Highest Salary Map
+		Map<String, Integer> salaryMap = employees.stream()
 
-				        .collect(Collectors.toMap(
-				                Employee::getId,
-				                Employee::getSalary
-				        ));
+				.collect(Collectors.toMap(Employee::getName, Employee::getSalary));
 
-				System.out.println(salaryMap1);
+		System.out.println(salaryMap);
+
+		// Employee Id → name
+
+		Map<Integer, String> salaryMap1 = employees.stream()
+
+				.collect(Collectors.toMap(Employee::getId, Employee::getName));
+
+		System.out.println(salaryMap1);
 	}
 }
