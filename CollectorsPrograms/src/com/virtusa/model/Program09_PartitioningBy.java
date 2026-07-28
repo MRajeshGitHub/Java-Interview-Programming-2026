@@ -1,5 +1,7 @@
 package com.virtusa.model;
 
+import static java.util.stream.Collectors.partitioningBy;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -18,7 +20,7 @@ public class Program09_PartitioningBy {
 		);
 
 		Map<Boolean, List<Employee>> partitionBy = employees.stream()
-				.collect(Collectors.partitioningBy(e -> e.getSalary() > 50000));
+				.collect(partitioningBy(e -> e.getSalary() > 50000));
 
 		System.out.println("Salary >= 50000");
 		partitionBy.get(true).forEach(System.out::println);
