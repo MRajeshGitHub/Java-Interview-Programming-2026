@@ -75,5 +75,16 @@ public class Program04_AverageSalaryByDepartment {
 			System.out.println("Department : " + dept + "--MinSal-->" + min.orElse(null));
 		});
 
+		System.out.println("========================================");
+
+		// Program08 - Department-wise Employee Names
+		System.out.println("====Department-wise Employee Names====");
+
+		Map<String, List<String>> names = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
+				Collectors.mapping(Employee::getName, Collectors.toList())));
+
+		names.forEach((dept, name) -> {
+			System.out.println("Department : " + dept + "---Names : " + name);
+		});
 	}
 }
