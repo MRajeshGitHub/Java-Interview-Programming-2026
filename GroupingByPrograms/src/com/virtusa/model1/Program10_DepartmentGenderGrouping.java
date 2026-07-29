@@ -1,8 +1,10 @@
 package com.virtusa.model1;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Program10_DepartmentGenderGrouping {
@@ -49,6 +51,16 @@ public class Program10_DepartmentGenderGrouping {
 		deptName.forEach((dept, name) -> {
 			System.out.println("Department---> " + dept);
 			System.out.println("Names :" + name);
+		});
+
+		// Program13 – Department + MaxBy
+		System.out.println("================Program13 – Department + MaxBy=========================");
+
+		Map<String, Optional<Employee>> maxBy = employees.stream().collect(Collectors
+				.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+		maxBy.forEach((dept, max) -> {
+			System.out.println("Dept :" + dept);
+			System.out.println("MaxSal :-->" + max.orElse(null));
 		});
 	}
 }
