@@ -41,5 +41,14 @@ public class Program10_DepartmentGenderGrouping {
 			System.out.println("Department is :" + dept);
 			System.out.println("Count Is : " + count);
 		});
+
+		System.out.println("================Program12 – Department + Mapping=========================");
+
+		Map<String, List<String>> deptName = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
+				Collectors.mapping(Employee::getName, Collectors.toList())));
+		deptName.forEach((dept, name) -> {
+			System.out.println("Department---> " + dept);
+			System.out.println("Names :" + name);
+		});
 	}
 }
