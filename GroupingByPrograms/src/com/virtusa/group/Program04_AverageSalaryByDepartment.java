@@ -65,5 +65,15 @@ public class Program04_AverageSalaryByDepartment {
 			System.out.println("Department : " + dept + "---MaxSal --::" + max.orElse(null));
 		});
 
+		System.out.println("========================================");
+		// Program07 - Lowest Salary by Department
+		System.out.println("===Lowest Salary by Department===");
+
+		Map<String, Optional<Employee>> minSal = employees.stream().collect(Collectors
+				.groupingBy(Employee::getDepartment, Collectors.minBy(Comparator.comparing(Employee::getSalary))));
+		minSal.forEach((dept, min) -> {
+			System.out.println("Department : " + dept + "--MinSal-->" + min.orElse(null));
+		});
+
 	}
 }
