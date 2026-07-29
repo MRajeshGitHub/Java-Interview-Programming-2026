@@ -53,5 +53,17 @@ public class Program04_AverageSalaryByDepartment {
 
 			System.out.println("Department ::-> " + dept + "---Max-Sal Employee : " + maxsall.orElse(null));
 		});
+		System.out.println("========================================");
+
+		// IT Department-Highest Salary Employee
+		System.out.println("IT Department Highest Salary Employee");
+
+		Map<String, Optional<Employee>> maxIt = employees.stream().filter(e -> e.getDepartment().equals("IT"))
+				.collect(Collectors.groupingBy(Employee::getDepartment,
+						Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+		maxIt.forEach((dept, max) -> {
+			System.out.println("Department : " + dept + "---MaxSal --::" + max.orElse(null));
+		});
+
 	}
 }
