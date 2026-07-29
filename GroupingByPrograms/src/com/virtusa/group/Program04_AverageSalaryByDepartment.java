@@ -24,5 +24,18 @@ public class Program04_AverageSalaryByDepartment {
 			System.out.println("Average sal is :" + avgs);
 
 		});
+		System.out.println("===========================");
+		System.out.println("Total Salary by Department");
+		System.out.println("===========================");
+		// Program05 - Total Salary by Department
+		Map<String, Integer> totalSalary = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.summingInt(Employee::getSalary)));
+
+		totalSalary.forEach((dept, sum) -> {
+			System.out.println("Detp :" + dept);
+			System.out.println("-----");
+			System.out.println("Total Salary : " + sum);
+		});
+
 	}
 }
