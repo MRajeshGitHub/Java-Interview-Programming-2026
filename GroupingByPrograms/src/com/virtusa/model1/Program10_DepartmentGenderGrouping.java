@@ -31,5 +31,15 @@ public class Program10_DepartmentGenderGrouping {
 			System.out.println();
 			System.out.println("-------------");
 		});
+
+		// Program11 - Department + Counting
+		System.out.println("================Program11 - Department + Counting=========================");
+		Map<String, Long> deptCount = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
+
+		deptCount.forEach((dept, count) -> {
+			System.out.println("Department is :" + dept);
+			System.out.println("Count Is : " + count);
+		});
 	}
 }
