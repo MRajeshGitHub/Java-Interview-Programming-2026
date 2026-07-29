@@ -38,7 +38,7 @@ public class Program03_CountEmployeesPerDepartment {
 				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
 		IT.forEach((dept, count) -> {
 			System.out.println("Dept : " + dept);
-			System.out.println("--");
+			System.out.println("-------");
 			System.out.println("count : " + count);
 		});
 
