@@ -1,8 +1,10 @@
 package com.virtusa.group;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Program04_AverageSalaryByDepartment {
@@ -37,5 +39,19 @@ public class Program04_AverageSalaryByDepartment {
 			System.out.println("Total Salary : " + sum);
 		});
 
+		System.out.println("===Highest Salary by Department====");
+		// Program06 - Highest Salary by Department
+
+		Map<String, Optional<Employee>> maxsal = employees.stream().collect(Collectors
+				.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+
+		maxsal.forEach((dept, maxsall) -> {
+			/*
+			 * System.out.println("Department :" + dept); System.out.println("------");
+			 * System.out.println("Max Sal :" + maxsall.orElse(null));
+			 */
+
+			System.out.println("Department ::-> " + dept + "---Max-Sal Employee : " + maxsall.orElse(null));
+		});
 	}
 }
