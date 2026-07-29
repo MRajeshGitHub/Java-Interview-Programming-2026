@@ -2,6 +2,7 @@ package com.virtusa.group;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -85,6 +86,18 @@ public class Program04_AverageSalaryByDepartment {
 
 		names.forEach((dept, name) -> {
 			System.out.println("Department : " + dept + "---Names : " + name);
+		});
+
+		System.out.println("========================================");
+
+		// Program09 – Department-wise Salary Statistics
+		System.out.println("====Department-wise Salary Statistics====");
+
+		Map<String, IntSummaryStatistics> statictics = employees.stream().collect(
+				Collectors.groupingBy(Employee::getDepartment, Collectors.summarizingInt(Employee::getSalary)));
+
+		statictics.forEach((dept, sal) -> {
+			System.out.println("Department : " + dept + "  : " + sal);
 		});
 	}
 }
