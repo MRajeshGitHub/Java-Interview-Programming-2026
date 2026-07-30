@@ -30,15 +30,6 @@ public class Program02_NestedIntegerFlatten {
 		int sum = numbers.stream().flatMap(List::stream).mapToInt(Integer::intValue).sum();
 		System.out.println("Sum is : " + sum);
 
-		// Even-Num check
-
-		List<Integer> even = numbers.stream().flatMap(List::stream).filter(i -> i % 2 == 0)
-				.collect(Collectors.toList());
-		System.out.println(even);
-
-		// sort int DESC with java 16 toList()
-
-		List<Integer> list3 = numbers.stream().flatMap(List::stream).sorted((a,b)->b-a).toList();
-		System.out.println(list3);
+		
 	}
 }
