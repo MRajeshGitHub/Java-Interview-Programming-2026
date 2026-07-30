@@ -23,13 +23,18 @@ public class Program04_DistinctSkills {
 
 		// Using Java 16
 		List<String> dSkills = employees.stream().flatMap(e -> e.getSkills().stream()).distinct().toList();
-		System.out.println(dSkills);//[Java, Spring, Git, SQL, Docker, Kafka]
+		System.out.println(dSkills);// [Java, Spring, Git, SQL, Docker, Kafka]
 
 		// Using java 8 and setList
 
 		Set<String> sSkills = employees.stream().flatMap(e -> e.getSkills().stream()).collect(Collectors.toSet());
 
-		System.out.println(sSkills);//[Java, Git, Docker, Kafka, Spring, SQL] order not maintained with set type
+		System.out.println(sSkills);// [Java, Git, Docker, Kafka, Spring, SQL] order not maintained with set type
+
+		// alphabetical order
+
+		List<String> sort = employees.stream().flatMap(e -> e.getSkills().stream()).distinct().sorted().toList();
+		System.out.println(sort);
 	}
 
 }
