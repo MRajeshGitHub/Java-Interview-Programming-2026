@@ -26,5 +26,11 @@ public class Program08_FlatMapCollectors {
 
 		System.out.println(collect);// [Java, Git, Docker, Kafka, Spring, SQL]
 
+		// Alphabetically Sorted Unique Skills
+
+		List<String> list = employees.stream().flatMap(e -> e.getSkills().stream()).sorted().distinct()
+				.collect(Collectors.toList());
+
+		System.out.println(list);
 	}
 }
