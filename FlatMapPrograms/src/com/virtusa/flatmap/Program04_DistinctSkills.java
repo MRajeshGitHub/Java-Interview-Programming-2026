@@ -35,6 +35,13 @@ public class Program04_DistinctSkills {
 
 		List<String> sort = employees.stream().flatMap(e -> e.getSkills().stream()).distinct().sorted().toList();
 		System.out.println(sort);
+
+		// only "Java" Aad "Spring"
+
+		List<String> list = employees.stream().flatMap(e -> e.getSkills().stream())
+				.filter(e -> e.equalsIgnoreCase("Java") || e.equalsIgnoreCase("Spring")).toList();
+
+		System.out.println(list);
 	}
 
 }
