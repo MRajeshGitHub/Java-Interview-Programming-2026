@@ -31,6 +31,9 @@ public class Program08_FlatMapCollectors {
 		List<String> list = employees.stream().flatMap(e -> e.getSkills().stream()).sorted().distinct()
 				.collect(Collectors.toList());
 
-		System.out.println(list);
+		System.out.println(list);// [Docker, Git, Java, Kafka, SQL, Spring]
+		// Skills count
+		long count = employees.stream().flatMap(e -> e.getSkills().stream()).count();
+		System.out.println(count);
 	}
 }
