@@ -62,5 +62,13 @@ public class Program10_DepartmentGenderGrouping {
 			System.out.println("Dept :" + dept);
 			System.out.println("MaxSal :-->" + max.orElse(null));
 		});
+		// Lowest Salary
+		System.out.println("================Program14 – Department + MinBy=========================");
+		Map<String, Optional<Employee>> minby = employees.stream().collect(Collectors
+				.groupingBy(Employee::getDepartment, Collectors.minBy(Comparator.comparing(Employee::getSalary))));
+		minby.forEach((dept, min) -> {
+			System.out.println("Detp : " + dept);
+			System.out.println("Min Salary :" + min.orElse(null));
+		});
 	}
 }
