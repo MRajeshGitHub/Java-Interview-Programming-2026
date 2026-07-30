@@ -33,7 +33,6 @@ public class Program08_FlatMapCollectors {
 
 		System.out.println(list);// [Docker, Git, Java, Kafka, SQL, Spring]
 		// Skills count
-		long count = employees.stream().flatMap(e -> e.getSkills().stream()).count();
-		System.out.println(count);
+		long count = employees.stream().flatMap(e -> e.getSkills().stream()).count();		System.out.println(count);
 	}
 }
