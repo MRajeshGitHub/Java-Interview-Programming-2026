@@ -22,7 +22,6 @@ public class Program07_FlatMapFilter {
 		List<String> list = employees.stream().flatMap(e -> e.getSkills().stream()).filter(e -> e.startsWith("J"))
 				.toList();
 		System.out.println(list);
-		
-		
+
 	}
 }
