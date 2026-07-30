@@ -1,2 +1,17 @@
-.metadata/
+# Compiled class files
+*.class
 bin/
+target/
+
+# Eclipse & STS Metadata
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# OS specific files
+.DS_Store
+Thumbs.db

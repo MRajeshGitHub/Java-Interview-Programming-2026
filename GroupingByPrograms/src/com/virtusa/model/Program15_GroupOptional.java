@@ -40,7 +40,7 @@ public class Program15_GroupOptional {
 		collect.forEach((dept, emp) -> {
 			System.out.println(dept);
 			System.out.println(emp);
-			System.out.println("-----------");
+
 		});
 
 	}
