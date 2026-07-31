@@ -15,5 +15,11 @@ public class Program01_SumOfNumbers {
 
 		Integer evenSum = numbers.stream().filter(n -> n % 2 == 0).reduce(0, Integer::sum);
 		System.out.println("Reduce even sum is : " + evenSum);
+
+		// Sum of Odd Numbers
+
+		Integer oddSum = numbers.stream().filter(n -> n % 2 == 1).reduce(0, Integer::sum);
+
+		System.out.println("Odd sum is : " + oddSum);// Odd sum is : 160
 	}
 }
