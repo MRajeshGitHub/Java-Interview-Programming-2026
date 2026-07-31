@@ -10,6 +10,12 @@ public class Program02_ProductOfNumbers {
 		Integer product = numbers.stream().reduce(1, (a, b) -> a * b);
 
 		System.out.println("Product using reduce : " + product);
+
+		// Product of Even Numbers
+
+		Integer evenProduct = numbers.stream().filter(n -> n % 2 == 0).reduce(1, (a, b) -> a * b);
+
+		System.out.println("EvenProduct : " + evenProduct);
 	}
 
 }
