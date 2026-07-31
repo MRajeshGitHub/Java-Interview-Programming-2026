@@ -21,5 +21,11 @@ public class Program01_SumOfNumbers {
 		Integer oddSum = numbers.stream().filter(n -> n % 2 == 1).reduce(0, Integer::sum);
 
 		System.out.println("Odd sum is : " + oddSum);// Odd sum is : 160
+
+		// Double Sum
+
+		Integer doubleSum = numbers.stream().map(n -> n * 2).reduce(0, Integer::sum);
+
+		System.out.println("doubleSum is : " + doubleSum);
 	}
 }
