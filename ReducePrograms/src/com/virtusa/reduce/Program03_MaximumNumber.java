@@ -17,5 +17,9 @@ public class Program03_MaximumNumber {
 		Integer min = numbers.stream().reduce(Integer.MAX_VALUE, (a, b) -> a < b ? a : b);
 		System.out.println(min);
 
+		// Maximum
+		Integer maxNum = numbers.stream().reduce(Integer::max).orElse(0);
+		System.out.println(maxNum);
+
 	}
 }
