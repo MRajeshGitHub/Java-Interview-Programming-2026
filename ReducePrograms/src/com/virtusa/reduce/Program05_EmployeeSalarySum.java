@@ -2,6 +2,7 @@ package com.virtusa.reduce;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Program05_EmployeeSalarySum {
@@ -20,8 +21,14 @@ public class Program05_EmployeeSalarySum {
 
 		);
 
-		//Using collecotrs
+		// Using collecotrs
 		Double salarySum = employees.stream().collect(Collectors.summingDouble(Employee::getSalary));
 		System.out.println(salarySum);
+
+		// Using reduce
+
+		Optional<Double> reduceSum = employees.stream().map(Employee::getSalary).reduce(Double::sum);
+
+		System.out.println("Employee salary sum is :" + reduceSum.orElse(null));
 	}
 }
