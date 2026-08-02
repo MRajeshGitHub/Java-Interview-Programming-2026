@@ -18,5 +18,11 @@ public class Program06_LongestString {
 
 		Optional<String> smalString = names.stream().reduce((a, b) -> a.length() < b.length() ? a : b);
 		System.out.println("Smallest Sub String in the list :" + smalString.orElse(null));
+
+		// 5 Characters String in the list
+
+		List<String> length = names.stream().filter(n -> n.length() > 5).toList();
+
+		System.out.println(length);
 	}
 }
