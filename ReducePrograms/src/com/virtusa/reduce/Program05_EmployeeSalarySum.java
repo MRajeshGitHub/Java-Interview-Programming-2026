@@ -27,8 +27,8 @@ public class Program05_EmployeeSalarySum {
 
 		// Using reduce
 
-		Optional<Double> reduceSum = employees.stream().map(Employee::getSalary).reduce(Double::sum);
+		Double reduceSum = employees.stream().map(Employee::getSalary).reduce(0.0,Double::sum);
 
-		System.out.println("Employee salary sum is :" + reduceSum.orElse(null));
+		System.out.println("Employee salary sum is :" + reduceSum);
 	}
 }
