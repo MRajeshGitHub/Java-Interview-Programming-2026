@@ -19,10 +19,17 @@ public class Program06_LongestString {
 		Optional<String> smalString = names.stream().reduce((a, b) -> a.length() < b.length() ? a : b);
 		System.out.println("Smallest Sub String in the list :" + smalString.orElse(null));
 
-		// 5 Characters String in the list
+		// 5 Characters String in the list using java 16
 
 		List<String> length = names.stream().filter(n -> n.length() > 5).toList();
 
 		System.out.println(length);
+
+		// upper case
+
+		Optional<String> upper = Optional.ofNullable(
+				names.stream().map(String::toUpperCase).reduce((a, b) -> a.length() > b.length() ? a : b).orElse(null));
+
+		System.out.println("Upper with reduce : " + upper);// Upper with reduce : Optional[MICROSERVICES]
 	}
 }
