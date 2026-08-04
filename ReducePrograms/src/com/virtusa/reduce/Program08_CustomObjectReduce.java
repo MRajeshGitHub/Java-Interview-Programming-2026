@@ -40,6 +40,13 @@ public class Program08_CustomObjectReduce {
 		Employee minSal = employees.stream().reduce((a, b) -> a.getSalary() < b.getSalary() ? a : b).orElse(null);
 
 		System.out.println("Min sal is : " + minSal);
+
+		// 2. Longest Employee Name
+
+		Employee longestName = employees.stream().reduce((a, b) -> a.getName().length() > b.getName().length() ? a : b)
+				.orElse(null);
+
+		System.out.println("Longest Employee Name : " + longestName);
 	}
 
 }
