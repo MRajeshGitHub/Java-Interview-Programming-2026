@@ -54,6 +54,12 @@ public class Program08_CustomObjectReduce {
 				.reduce((a, b) -> a.getSalary() > b.getSalary() ? a : b).orElse(null);
 
 		System.out.println(highestSal);
+
+		// Max
+
+		Employee max = employees.stream().max((a, b) -> Double.compare(a.getSalary(), b.getSalary())).orElse(null);
+
+		System.out.println("Max sal :" + max);
 	}
 
 }
