@@ -29,6 +29,11 @@ public class Program08_CustomObjectReduce {
 
 		System.out.println("Max salary is : " + maxSal.orElse(null));
 
+		// highestSalaryEmployee using reduce
+
+		Employee maxSal1 = employees.stream().reduce((a, b) -> a.getSalary() > b.getSalary() ? a : b).orElse(null);
+
+		System.out.println("max sal is :" + maxSal1);
 	}
 
 }
