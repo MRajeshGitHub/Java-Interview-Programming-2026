@@ -28,8 +28,7 @@ public class Program08_CustomObjectReduce {
 				.collect(Collectors.maxBy(Comparator.comparing(Employee::getSalary)));
 
 		System.out.println("Max salary is : " + maxSal.orElse(null));
-		
-		
+
 	}
 
 }
