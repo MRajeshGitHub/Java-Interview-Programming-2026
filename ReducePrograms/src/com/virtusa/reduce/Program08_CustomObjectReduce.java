@@ -34,6 +34,12 @@ public class Program08_CustomObjectReduce {
 		Employee maxSal1 = employees.stream().reduce((a, b) -> a.getSalary() > b.getSalary() ? a : b).orElse(null);
 
 		System.out.println("max sal is :" + maxSal1);
+
+		// 1. Lowest Salary Employee
+
+		Employee minSal = employees.stream().reduce((a, b) -> a.getSalary() < b.getSalary() ? a : b).orElse(null);
+
+		System.out.println("Min sal is : " + minSal);
 	}
 
 }
