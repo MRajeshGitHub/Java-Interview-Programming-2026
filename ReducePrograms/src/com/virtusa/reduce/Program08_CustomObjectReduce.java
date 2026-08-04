@@ -47,6 +47,13 @@ public class Program08_CustomObjectReduce {
 				.orElse(null);
 
 		System.out.println("Longest Employee Name : " + longestName);
+
+		// 3. Highest Salary after 10% Bonus
+
+		Employee highestSal = employees.stream().map(e -> new Employee(e.getId(), e.getName(), e.getSalary() * 1.10))
+				.reduce((a, b) -> a.getSalary() > b.getSalary() ? a : b).orElse(null);
+
+		System.out.println(highestSal);
 	}
 
 }
