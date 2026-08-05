@@ -32,6 +32,9 @@ public class Program01_AnyMatch {
 		System.out.println("Non Match : " + noneMatch);// Non Match : true
 
 		boolean anyMatch3 = numbers.stream().anyMatch(n -> n % 2 == 1);
-		System.out.println(anyMatch3);//false
+		System.out.println(anyMatch3);// false
+
+		boolean noneMatch2 = names.stream().noneMatch(String::isEmpty);
+		System.out.println(noneMatch2);// true
 	}
 }
