@@ -24,5 +24,14 @@ public class Program01_AnyMatch {
 		boolean allMatch = numbers.stream().allMatch(n -> n > 9);
 
 		System.out.println("All match is : " + allMatch);// All match is : true
+
+		// Program03 - noneMatch()
+
+		boolean noneMatch = numbers.stream().noneMatch(n -> n < 0);
+
+		System.out.println("Non Match : " + noneMatch);// Non Match : true
+
+		boolean anyMatch3 = numbers.stream().anyMatch(n -> n % 2 == 1);
+		System.out.println(anyMatch3);//false
 	}
 }
