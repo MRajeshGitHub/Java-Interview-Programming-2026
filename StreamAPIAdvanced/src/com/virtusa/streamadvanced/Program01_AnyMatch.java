@@ -36,5 +36,11 @@ public class Program01_AnyMatch {
 
 		boolean noneMatch2 = names.stream().noneMatch(String::isEmpty);
 		System.out.println(noneMatch2);// true
+
+		// Program04 - findFirst()
+
+		Integer orElse = numbers.stream().filter(n -> n % 2 == 0).findFirst().orElse(null);
+
+		System.out.println(orElse);// 10
 	}
 }
