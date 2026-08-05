@@ -2,6 +2,7 @@ package com.virtusa.streamadvanced;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Program01_AnyMatch {
 
@@ -48,6 +49,11 @@ public class Program01_AnyMatch {
 		String find = names.stream().findAny().orElse(null);
 
 		System.out.println(find);// Rajesh
+
+		// Program06 - peek()
+
+		numbers.stream().peek(System.out::println).forEach(n->{});
+		
 	}
 
 }
