@@ -18,5 +18,11 @@ public class Program01_AnyMatch {
 		boolean anyMatch2 = names.stream().anyMatch(n -> n.startsWith("R"));
 
 		System.out.println(anyMatch2);// true
+
+		// Program02_AllMatch
+
+		boolean allMatch = numbers.stream().allMatch(n -> n > 9);
+
+		System.out.println("All match is : " + allMatch);// All match is : true
 	}
 }
