@@ -42,5 +42,12 @@ public class Program01_AnyMatch {
 		Integer orElse = numbers.stream().filter(n -> n % 2 == 0).findFirst().orElse(null);
 
 		System.out.println(orElse);// 10
+
+		// Program05 - findAny()
+
+		String find = names.stream().findAny().orElse(null);
+
+		System.out.println(find);// Rajesh
 	}
+
 }
