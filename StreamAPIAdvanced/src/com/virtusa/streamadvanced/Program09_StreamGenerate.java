@@ -1,5 +1,6 @@
 package com.virtusa.streamadvanced;
 
+import java.time.LocalDate;
 import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Stream;
@@ -25,5 +26,12 @@ public class Program09_StreamGenerate {
 
 		System.out.println("--------------------");
 		Stream.generate(() -> r.nextInt(2000) + 00.00).limit(5).forEach(System.out::println);
+
+		// Generate Current Date
+		Stream.generate(LocalDate::now)
+
+				.limit(3)
+
+				.forEach(System.out::println);
 	}
 }
