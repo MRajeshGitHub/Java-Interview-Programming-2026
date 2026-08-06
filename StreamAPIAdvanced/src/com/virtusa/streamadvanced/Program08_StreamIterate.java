@@ -24,5 +24,9 @@ public class Program08_StreamIterate {
 		// Example-5 (Java 9 Version)
 
 		Stream.iterate(1, n -> n <= 10, n -> n + 1).forEach(System.out::println);
+
+		// Countdown
+
+		Stream.iterate(10, n -> n - 1).limit(10).forEach(System.out::println);
 	}
 }
