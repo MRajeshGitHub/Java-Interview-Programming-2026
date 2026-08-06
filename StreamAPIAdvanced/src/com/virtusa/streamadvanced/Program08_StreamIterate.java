@@ -20,5 +20,9 @@ public class Program08_StreamIterate {
 		List<Integer> list2 = Stream.iterate(1, n -> n + 1).limit(5).map(n -> n * n).toList();
 
 		System.out.println(list2);
+
+		// Example-5 (Java 9 Version)
+
+		Stream.iterate(1, n -> n <= 10, n -> n + 1).forEach(System.out::println);
 	}
 }
