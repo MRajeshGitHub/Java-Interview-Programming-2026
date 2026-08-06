@@ -10,3 +10,13 @@ target/
 .classpath
 .project
 .settings/
+
+# Spring Boot build outputs
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+
+# IDE specific files
+**/.classpath
+**/.project
+**/.settings/
+.metadata/
