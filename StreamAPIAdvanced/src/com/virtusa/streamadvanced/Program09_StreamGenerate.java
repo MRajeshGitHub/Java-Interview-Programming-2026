@@ -20,5 +20,10 @@ public class Program09_StreamGenerate {
 		System.out.println("--------------------");
 
 		Stream.generate(() -> UUID.randomUUID()).limit(5).forEach(System.out::println);
+
+		// Example-5 (OTP Generation)
+
+		System.out.println("--------------------");
+		Stream.generate(() -> r.nextInt(2000) + 00.00).limit(5).forEach(System.out::println);
 	}
 }
