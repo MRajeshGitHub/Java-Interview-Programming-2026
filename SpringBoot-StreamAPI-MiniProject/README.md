@@ -1,7 +1,7 @@
 # SpringBoot Stream API Mini Project
 
 
-## 🚀 Features & Stream Operations 
+## Features & Stream Operations 
 - Filtering active entities (`filter`)
 - Mapping and transformation (`map`, `toUpperCase`)
 - Aggregate mathematical operations (`sum`, `averagingDouble`)
@@ -9,7 +9,7 @@
 - Min/Max evaluations (`max`)
 - Matching conditions (`anyMatch`, `allMatch`)
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Java:** 17+
 - **Framework:** Spring Boot 3.x
 - **Build Tool:** Maven
