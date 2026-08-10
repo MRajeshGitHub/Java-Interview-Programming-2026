@@ -19,6 +19,15 @@ public class Program06_BiConsumer {
 		employees.forEach((name, sal) -> {
 			System.out.println(name + "-----" + sal);
 		});
+		
+		employees.forEach((name,sal)->{
+			if(sal>50000) {
+				System.out.println(name);
+			}
+			else
+				System.out.println(name+" not there.");
+			
+		});
 
 	}
 
