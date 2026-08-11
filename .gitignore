@@ -20,3 +20,8 @@ target/
 **/.project
 **/.settings/
 .metadata/
+
+# Maven Wrapper files
+.mvn/
+mvnw
+mvnw.cmd
