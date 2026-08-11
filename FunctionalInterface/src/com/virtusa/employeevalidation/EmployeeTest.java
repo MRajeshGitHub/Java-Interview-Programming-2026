@@ -32,5 +32,10 @@ public class EmployeeTest {
 
 		Predicate<Employee> salary = emp -> emp.getSalary() > 0;
 		System.out.println(salary.test(employeeList.get(3)));// true
+
+		// Email Validation
+
+		Predicate<Employee> email = emp -> emp.getEmail() != null && emp.getEmail().contains("@");
+		System.out.println(email.test(employeeList.get(5)));// true
 	}
 }
