@@ -23,10 +23,14 @@ public class EmployeeTest {
 		Predicate<Employee> validate = emp -> emp.getName() != null && emp.getName().isBlank();
 		System.out.println(validate.test(employeeList.get(0)));
 
-		
-		//Age Validation :-> Age>18
-		
-		Predicate<Employee> ageValid= emp->emp.getAge()>=18;
-		System.out.println(ageValid.test(employeeList.get(5)));//true
+		// Age Validation :-> Age>18
+
+		Predicate<Employee> ageValid = emp -> emp.getAge() >= 18;
+		System.out.println(ageValid.test(employeeList.get(5)));// true
+
+		// Salary Validation
+
+		Predicate<Employee> salary = emp -> emp.getSalary() > 0;
+		System.out.println(salary.test(employeeList.get(3)));// true
 	}
 }
