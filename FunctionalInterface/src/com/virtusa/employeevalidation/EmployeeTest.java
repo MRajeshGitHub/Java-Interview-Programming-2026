@@ -37,5 +37,7 @@ public class EmployeeTest {
 
 		Predicate<Employee> email = emp -> emp.getEmail() != null && emp.getEmail().contains("@");
 		System.out.println(email.test(employeeList.get(3)));// true
+		
+		
 	}
 }
