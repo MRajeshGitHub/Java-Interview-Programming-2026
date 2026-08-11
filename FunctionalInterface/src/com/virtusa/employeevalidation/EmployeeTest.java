@@ -36,6 +36,6 @@ public class EmployeeTest {
 		// Email Validation
 
 		Predicate<Employee> email = emp -> emp.getEmail() != null && emp.getEmail().contains("@");
-		System.out.println(email.test(employeeList.get(5)));// true
+		System.out.println(email.test(employeeList.get(3)));// true
 	}
 }
