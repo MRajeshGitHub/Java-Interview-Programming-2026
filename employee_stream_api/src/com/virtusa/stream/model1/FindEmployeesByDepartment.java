@@ -27,5 +27,18 @@ public class FindEmployeesByDepartment {
 			System.out.println("----------");
 		});
 
+		System.out.println("================== IT department======================");
+		// IT department
+
+		Map<String, List<Employee>> itDepart = employees.stream().filter(emp -> emp.getDepartment().equals("IT"))
+				.collect(Collectors.groupingBy(Employee::getDepartment));
+		itDepart.forEach((dept, name) -> {
+			System.out.println("Dapartment name : " + dept);
+			System.out.println("-------------------------");
+			System.out.println("Employee Name  : ");
+			name.forEach(System.out::println);
+
+		});
+
 	}
 }
