@@ -34,6 +34,14 @@ public class Program04FindEmployeesByCity {
 				.collect(Collectors.toList());
 
 		hydList.forEach(System.out::println);
+
+		System.out.println("----------------------------");
+		String city = "Hyderabad";
+
+		List<Employee> city1 = employees.stream().filter(e -> city.equals(e.getCity())).toList();
+
+		city1.forEach(System.out::println);
+
 	}
 
 }

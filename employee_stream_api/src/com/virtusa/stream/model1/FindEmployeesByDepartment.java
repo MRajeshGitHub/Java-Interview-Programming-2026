@@ -34,7 +34,7 @@ public class FindEmployeesByDepartment {
 				.collect(Collectors.groupingBy(Employee::getDepartment));
 		itDepart.forEach((dept, name) -> {
 			System.out.println("Dapartment name : " + dept);
-			System.out.println("-------------------------");
+			System.out.println("------------------");
 			System.out.println("Employee Name  : ");
 			name.forEach(System.out::println);
 
