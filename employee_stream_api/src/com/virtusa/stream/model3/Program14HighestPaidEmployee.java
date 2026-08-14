@@ -33,6 +33,12 @@ public class Program14HighestPaidEmployee {
 
 		double max = employees.stream().mapToDouble(Employee::getSalary).max().orElse(0);
 
-		System.out.println("Max salary in the list is : " + max);//Max salary in the list is : 85000.0
+		System.out.println("Max salary in the list is : " + max);// Max salary in the list is : 85000.0
+
+		// min salary
+
+		double minSal = employees.stream().mapToDouble(Employee::getSalary).min().orElse(0);
+
+		System.out.println(minSal);
 	}
 }
