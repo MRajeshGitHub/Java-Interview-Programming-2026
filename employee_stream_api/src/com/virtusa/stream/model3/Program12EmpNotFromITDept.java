@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Program12EmpNotFromITDept {
 
+	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
 
 		// Find Employees Who Are NOT From IT Department
@@ -35,5 +36,14 @@ public class Program12EmpNotFromITDept {
 				.filter(emp -> !deptIT.equals(emp.getDepartment()) && !deptHr.equals(emp.getDepartment())).toList();
 
 		list2.forEach(System.out::println);
+
+		System.out.println("==============================");
+
+		// OR
+
+		List<String> excludeDepts = List.of("IT", "HR");
+		List<Employee> list3 = employees.stream().filter(e -> !excludeDepts.contains(e.getDepartment())).toList();
+
+		list3.forEach(System.out::println);
 	}
 }
