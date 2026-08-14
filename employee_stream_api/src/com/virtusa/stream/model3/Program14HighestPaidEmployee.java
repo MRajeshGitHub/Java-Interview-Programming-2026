@@ -24,12 +24,15 @@ public class Program14HighestPaidEmployee {
 
 				new Employee(105, "Priya", "Sales", 29, 60000, "Pune", "Female"));
 
-		
-				Employee maxSal = employees.stream().max(Comparator.comparing(Employee::getSalary)).orElse(null);
-				
+		Employee maxSal = employees.stream().max(Comparator.comparing(Employee::getSalary)).orElse(null);
 
 		System.out.println(maxSal);// Employee [id=103, name=Rahul, department=IT, age=35, salary=85000.0,
-												// city=Hyderabad, gender=Male]
+									// city=Hyderabad, gender=Male]
 
+		// Only max salary
+
+		double max = employees.stream().mapToDouble(Employee::getSalary).max().orElse(0);
+
+		System.out.println("Max salary in the list is : " + max);//Max salary in the list is : 85000.0
 	}
 }
