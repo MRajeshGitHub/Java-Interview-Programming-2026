@@ -25,5 +25,15 @@ public class Program12EmpNotFromITDept {
 		List<Employee> list = employees.stream().filter(emp -> !dept.equals(emp.getDepartment())).toList();
 
 		list.forEach(System.out::println);
+
+		System.out.println("-----------Except IT and HR list of employee --------");
+
+		String deptIT = "IT";
+		String deptHr = "HR";
+
+		List<Employee> list2 = employees.stream()
+				.filter(emp -> !deptIT.equals(emp.getDepartment()) && !deptHr.equals(emp.getDepartment())).toList();
+
+		list2.forEach(System.out::println);
 	}
 }
