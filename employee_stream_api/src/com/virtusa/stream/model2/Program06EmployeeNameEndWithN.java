@@ -32,6 +32,13 @@ public class Program06EmployeeNameEndWithN {
 		// city=Delhi]
 		// Employee [id=103, name=Kiran, department=IT, age=35, salary=85000.0,
 		// city=Hyderabad]
+		System.out.println("----------------------");
+
+		// using java 16 immutable list
+
+		List<Employee> list = employees.stream().filter(emp -> emp.getName().endsWith("n")).toList();
+
+		list.forEach(System.out::println);
 
 	}
 }
