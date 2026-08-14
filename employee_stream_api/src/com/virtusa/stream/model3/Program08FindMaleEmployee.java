@@ -28,5 +28,11 @@ public class Program08FindMaleEmployee {
 		// checking Null safety
 
 		employees.stream().filter(e -> Objects.equals(gender, e.getGender())).toList().forEach(System.out::println);
+
+		System.out.println("----------------------");
+		// Female employees whose salary more than ₹50,000
+
+		employees.stream().filter(emp -> Objects.equals(gender, emp.getGender())).filter(e -> e.getSalary() > 50000)
+				.forEach(System.out::println);
 	}
 }
