@@ -3,12 +3,13 @@ package com.virtusa.stream.model3;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
-public class Program15lowestPaidEmployee {
+public class Program16EmpSecdHighSal {
 
 	public static void main(String[] args) {
 
-		// Find the Lowest Paid Employee
+		// Find the Second Highest Salary Employee
 
 		List<Employee> employees = Arrays.asList(
 
@@ -22,9 +23,8 @@ public class Program15lowestPaidEmployee {
 
 				new Employee(105, "Priya", "Sales", 29, 60000, "Pune", "Female"));
 
-		Employee loSal = employees.stream().min(Comparator.comparing(Employee::getSalary)).orElse(null);
-		System.out.println(loSal);// Employee [id=102, name=Amit, department=HR, age=28, salary=45000.0,
-									// city=Delhi, gender=Male]
+		Employee list = employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).skip(1).findFirst().orElse(null);
+		System.out.println(list);
 
 	}
 }
