@@ -27,11 +27,12 @@ public class Program11FindEmpLocAndDepartment {
 		List<Employee> list = employees.stream()
 				.filter(emp -> loc.equals(emp.getCity()) && dept.equals(emp.getDepartment())).toList();
 		list.forEach(System.out::println);
-		
-		//OUTPUT
-		//Employee [id=101, name=Rajesh, department=IT, age=40, salary=70000.0, city=Hyderabad, gender=Male]
-		//Employee [id=103, name=Rahul, department=IT, age=35, salary=85000.0, city=Hyderabad, gender=Male]
 
+		// OUTPUT
+		// Employee [id=101, name=Rajesh, department=IT, age=40, salary=70000.0,
+		// city=Hyderabad, gender=Male]
+		// Employee [id=103, name=Rahul, department=IT, age=35, salary=85000.0,
+		// city=Hyderabad, gender=Male]
 
 	}
 }
