@@ -40,5 +40,12 @@ public class Program06EmployeeNameEndWithN {
 
 		list.forEach(System.out::println);
 
+		System.out.println("----------------------");
+
+		// case-sensitive
+
+		List<Employee> list2 = employees.stream().filter(e -> e.getName().toLowerCase().endsWith("n")).toList();
+
+		list2.forEach(System.out::println);
 	}
 }
