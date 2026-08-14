@@ -2,6 +2,7 @@ package com.virtusa.stream.model3;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Program08FindMaleEmployee {
 
@@ -22,5 +23,10 @@ public class Program08FindMaleEmployee {
 		String gender = "Male";
 
 		employees.stream().filter(emp -> emp.getGender().equals(gender)).toList().forEach(System.out::println);
+
+		System.out.println("----------------------");
+		// checking Null safety
+
+		employees.stream().filter(e -> Objects.equals(gender, e.getGender())).toList().forEach(System.out::println);
 	}
 }
