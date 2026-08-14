@@ -20,7 +20,7 @@ public class Program08FindMaleEmployee {
 
 				new Employee(105, "Vikas", "Sales", 25, 40000, "Pune", "Male"));
 
-		String gender = "Male";
+		String gender = "Female";
 
 		employees.stream().filter(emp -> emp.getGender().equals(gender)).toList().forEach(System.out::println);
 
