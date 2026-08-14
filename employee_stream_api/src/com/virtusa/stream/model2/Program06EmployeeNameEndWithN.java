@@ -47,5 +47,12 @@ public class Program06EmployeeNameEndWithN {
 		List<Employee> list2 = employees.stream().filter(e -> e.getName().toLowerCase().endsWith("n")).toList();
 
 		list2.forEach(System.out::println);
+
+		System.out.println("----------------------");
+
+		// If name is Null
+
+		employees.stream().filter(e -> e.getName() != null).filter(e -> e.getName().endsWith("n"))
+				.forEach(System.out::println);
 	}
 }
