@@ -26,5 +26,12 @@ public class Program18TopThreeHighPaidEmployees {
 
 		System.out.println("Top 3 Highest Paid Employees:");
 		list.forEach(System.out::println);
+
+		// Top 3 Salaries
+
+		List<Double> list2 = employees.stream().map(Employee::getSalary).sorted(Comparator.reverseOrder()).limit(3)
+				.toList();
+
+		System.out.println(list2);
 	}
 }
