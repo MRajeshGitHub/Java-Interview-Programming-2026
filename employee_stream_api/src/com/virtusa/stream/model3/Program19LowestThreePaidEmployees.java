@@ -23,14 +23,22 @@ public class Program19LowestThreePaidEmployees {
 
 				new Employee(105, "Priya", "Sales", 29, 60000, "Pune", "Female"));
 
+		// Using java 16 toList()
 		List<Employee> list = employees.stream().sorted(Comparator.comparing(Employee::getSalary)).limit(3).toList();
 
 		list.forEach(System.out::println);
 		System.out.println("-------------------------------");
 
+		// Using java 8 collect(Collectors.toList())
 		List<Employee> collect = employees.stream().sorted(Comparator.comparing(Employee::getSalary)).limit(3)
 				.collect(Collectors.toList());
 
 		collect.forEach(System.out::println);
+
+		// Only lowest salary
+
+		List<Double> list2 = employees.stream().map(Employee::getSalary).distinct().sorted().limit(3).toList();
+
+		System.out.println(list2);
 	}
 }
