@@ -23,9 +23,8 @@ public class Program17ThirdHighestSalaryEmployee {
 		Employee thired = employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).skip(2)
 				.findFirst().orElse(null);
 
-		System.out.println("Third Highest Paid Employee:");
-		System.out.println(thired);
-		
+		System.out.println("Third Highest Paid Employee :" + thired);
+
 	}
-		
+
 }
