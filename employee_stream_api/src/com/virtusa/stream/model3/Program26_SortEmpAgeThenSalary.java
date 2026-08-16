@@ -43,5 +43,13 @@ public class Program26_SortEmpAgeThenSalary {
 		System.out.println("----------Age ascending + Salary descending?---------------");
 
 		list2.forEach(System.out::println);
+
+		System.out.println("'''''''''''''Age descending + Salary ascending?''''''''''''''''");
+
+		List<Employee> list3 = employees.stream().sorted(
+				Comparator.comparing(Employee::getAge, Comparator.reverseOrder()).thenComparing(Employee::getSalary))
+				.collect(Collectors.toList());
+
+		list3.forEach(System.out::println);
 	}
 }
