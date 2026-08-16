@@ -44,6 +44,13 @@ public class Program25SortEmpSalAndName {
 				.collect(Collectors.toList());
 
 		list3.forEach(System.out::println);
+
+		System.out.println("---------------Salary → Name → Age--------------------------");
+
+		List<Employee> list4 = employees.stream().sorted(Comparator.comparing(Employee::getSalary)
+				.thenComparing(Employee::getName).thenComparing(Employee::getAge)).collect(Collectors.toList());
+
+		list4.forEach(System.out::println);
 	}
 
 }
