@@ -37,5 +37,10 @@ public class Program21SortEmployeesByName {
 				.collect(Collectors.toList());
 		list2.forEach(System.out::println);
 
+		System.out.println("----------------------------");
+		// Only name sorting without any employee details
+
+		List<String> list3 = employees.stream().map(Employee::getName).sorted().collect(Collectors.toList());
+		list3.forEach(System.out::println);
 	}
 }
