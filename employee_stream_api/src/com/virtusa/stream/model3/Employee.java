@@ -10,6 +10,23 @@ public class Employee {
 	private String city;
 	private String gender;
 
+	public Employee(int id, String name, String department, int age, double salary, String city, String gender) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.department = department;
+		this.age = age;
+		this.salary = salary;
+		this.city = city;
+		this.gender = gender;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", department=" + department + ", age=" + age + ", salary="
+				+ salary + ", city=" + city + ", gender=" + gender + "]";
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -38,20 +55,4 @@ public class Employee {
 		return gender;
 	}
 
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", department=" + department + ", age=" + age + ", salary="
-				+ salary + ", city=" + city + ", gender=" + gender + "]";
-	}
-
-	public Employee(int id, String name, String department, int age, double salary, String city, String gender) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.department = department;
-		this.age = age;
-		this.salary = salary;
-		this.city = city;
-		this.gender = gender;
-	}
 }
