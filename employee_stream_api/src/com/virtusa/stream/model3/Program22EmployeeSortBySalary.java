@@ -25,14 +25,22 @@ public class Program22EmployeeSortBySalary {
 
 		List<Employee> list = employees.stream().sorted(Comparator.comparing(Employee::getSalary))
 				.collect(Collectors.toList());
-
+		System.out.println("Employees Sorted By Salary:");
 		list.forEach(System.out::println);
 
+		// Salary Descending
+
+		List<Employee> reversed = employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed())
+				.collect(Collectors.toList());
+		System.out.println("Employees Sorted By Salary:");
+
+		reversed.forEach(System.out::println);
 		System.out.println("-----------------");
-		// only Salary low to high without employee details
+		// only Salary high to low without employee details
 
-		List<Double> list2 = employees.stream().map(Employee::getSalary).sorted().toList();
+		List<Double> list2 = employees.stream().map(Employee::getSalary).sorted(Comparator.reverseOrder()).toList();
 
+		System.out.println("Employees Sorted By Salary:");
 		list2.forEach(System.out::println);
 	}
 }
