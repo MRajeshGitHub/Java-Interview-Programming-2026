@@ -27,6 +27,13 @@ public class Program23SortEmployeesByAge {
 				.collect(Collectors.toList());
 		System.out.println("Employees Sorted By Age : ");
 
-		ageList.forEach(System.out::println);
+		ageList.forEach(System.out::println);//mutable list
+
+		// only age sort
+
+		List<Integer> list = employees.stream().map(Employee::getAge).sorted().toList();//immutable list
+
+		System.out.println("only age sorting : ");
+		list.forEach(System.out::println);
 	}
 }
