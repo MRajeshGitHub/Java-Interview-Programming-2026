@@ -27,5 +27,12 @@ public class Program22EmployeeSortBySalary {
 				.collect(Collectors.toList());
 
 		list.forEach(System.out::println);
+
+		System.out.println("-----------------");
+		// only Salary low to high without employee details
+
+		List<Double> list2 = employees.stream().map(Employee::getSalary).sorted().toList();
+
+		list2.forEach(System.out::println);
 	}
 }
