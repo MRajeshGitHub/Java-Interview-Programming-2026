@@ -29,5 +29,13 @@ public class Program21SortEmployeesByName {
 		System.out.println("Employees Sorted By Name:");
 
 		list.forEach(System.out::println);
+
+		System.out.println("----------------------------");
+		// Name descending — Z → A
+
+		List<Employee> list2 = employees.stream().sorted(Comparator.comparing(Employee::getName).reversed())
+				.collect(Collectors.toList());
+		list2.forEach(System.out::println);
+
 	}
 }
