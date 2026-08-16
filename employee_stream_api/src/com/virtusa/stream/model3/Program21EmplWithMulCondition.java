@@ -20,11 +20,14 @@ public class Program21EmplWithMulCondition {
 				new Employee(104, "Neha", "HR", 32, 55000, "Mumbai", "Female"),
 
 				new Employee(105, "Priya", "Sales", 29, 60000, "Pune", "Female"));
-		
+
 		String dept = "IT";
 
-		List<Employee> list = employees.stream().filter(emp->dept.equals(emp.getDepartment())&& emp.getAge()>30 && emp.getSalary()>60000).toList();
+		List<Employee> list = employees.stream()
+				.filter(emp -> dept.equals(emp.getDepartment()) && emp.getAge() > 30 && emp.getSalary() > 60000)
+				.toList();
 
+		System.out.println("Employees matching multiple conditions:");
 		list.forEach(System.out::println);
 
 		// OutPUT
