@@ -28,5 +28,12 @@ public class Program24EmpSortBySalDesc {
 
 		System.out.println("Sort Employees by Salary in Descending Order (High → Low) : ");
 		salList.forEach(System.out::println);
+
+		System.out.println("===========================");
+		// only salary descending
+
+		List<Double> list = employees.stream().map(Employee::getSalary).sorted(Comparator.reverseOrder()).toList();
+		System.out.println("only salary descending :");
+		list.forEach(System.out::println);
 	}
 }
