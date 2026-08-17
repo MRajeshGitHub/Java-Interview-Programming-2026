@@ -47,6 +47,13 @@ public class Program31EmployeCount {
 				.distinct().skip(1).findFirst().orElse(null);
 
 		System.out.println(high);
+
+		// 2nd high salary only value
+
+		Double dHigh = employees.stream().map(Employee::getSalary).distinct().sorted(Comparator.reverseOrder()).skip(1)
+				.findFirst().orElse(null);
+
+		System.out.println(dHigh);
 	}
 
 }
