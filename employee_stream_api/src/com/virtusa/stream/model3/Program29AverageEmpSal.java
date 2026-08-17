@@ -1,6 +1,7 @@
 package com.virtusa.stream.model3;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,7 +25,13 @@ public class Program29AverageEmpSal {
 
 		Double salAvg = employees.stream().collect(Collectors.averagingDouble(Employee::getSalary));
 
-		System.out.println(salAvg);
+		System.out.println(salAvg);// 63000.0
+
+		// only average salary
+
+		double avg = employees.stream().mapToDouble(Employee::getSalary).average().orElse(0);
+		System.out.println("only average salary");
+		System.out.println(avg);
 	}
 
 }
