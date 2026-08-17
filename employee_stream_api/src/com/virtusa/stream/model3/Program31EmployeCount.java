@@ -54,6 +54,23 @@ public class Program31EmployeCount {
 				.findFirst().orElse(null);
 
 		System.out.println(dHigh);
+
+		// Find Third Highest Salary
+
+		System.out.println("-------Third Highest Salary---------");
+		Employee thiredSal = employees.stream()
+				.sorted(Comparator.comparing(Employee::getSalary, Comparator.reverseOrder())).distinct().skip(2)
+				.findFirst().orElse(null);
+
+		System.out.println(thiredSal);
+
+		// Top 3 highest unique salaries
+		System.out.println("-------Top 3 highest unique salaries-------------");
+
+		List<Double> list = employees.stream().map(Employee::getSalary).sorted(Comparator.reverseOrder()).distinct()
+				.limit(3).toList();
+
+		list.forEach(System.out::println);
 	}
 
 }
