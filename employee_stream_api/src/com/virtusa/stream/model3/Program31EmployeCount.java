@@ -71,6 +71,15 @@ public class Program31EmployeCount {
 				.limit(3).toList();
 
 		list.forEach(System.out::println);
+
+		// Top 3 highest unique salaries with details
+		System.out.println("-------Top 3 highest unique salaries with details-------------");
+
+		List<Employee> list2 = employees.stream()
+				.sorted(Comparator.comparing(Employee::getSalary, Comparator.reverseOrder())).distinct().limit(3)
+				.toList();
+
+		list2.forEach(System.out::println);
 	}
 
 }
