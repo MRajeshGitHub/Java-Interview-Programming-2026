@@ -42,6 +42,11 @@ public class Program31EmployeCount {
 				.skip(1).findFirst().orElse(null);
 
 		System.out.println(orElse);
+
+		Employee high = employees.stream().sorted(Comparator.comparing(Employee::getSalary, Comparator.reverseOrder()))
+				.distinct().skip(1).findFirst().orElse(null);
+
+		System.out.println(high);
 	}
 
 }
