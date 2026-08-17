@@ -1,7 +1,11 @@
 package com.virtusa.stream.model3;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Program31EmployeCount {
 
@@ -31,6 +35,13 @@ public class Program31EmployeCount {
 		long empCount = employees.stream().filter(e -> e.getDepartment().equals("IT")).count();
 
 		System.out.println("IT Department Employee Count is : " + empCount);
+
+		// Find Second Highest Salary
+
+		Employee orElse = employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).distinct()
+				.skip(1).findFirst().orElse(null);
+
+		System.out.println(orElse);
 	}
 
 }
