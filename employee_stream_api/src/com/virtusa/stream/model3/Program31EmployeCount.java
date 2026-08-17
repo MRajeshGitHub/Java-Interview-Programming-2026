@@ -25,6 +25,12 @@ public class Program31EmployeCount {
 
 		System.out.println("Total Number of Employees: ");
 		System.out.println(count);
+
+		// It Department employee list
+
+		long empCount = employees.stream().filter(e -> e.getDepartment().equals("IT")).count();
+
+		System.out.println("IT Department Employee Count is : " + empCount);
 	}
 
 }
