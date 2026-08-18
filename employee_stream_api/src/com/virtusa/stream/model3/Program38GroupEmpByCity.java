@@ -1,8 +1,10 @@
 package com.virtusa.stream.model3;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Program38GroupEmpByCity {
@@ -39,5 +41,21 @@ public class Program38GroupEmpByCity {
 			elist.forEach(System.out::println);
 		});
 
+		System.out.println("-------------------------------------------------------");
+		System.out.println("-------Group Employees by Department + Gender----------");
+
+		Map<String, Map<String, List<Employee>>> collect = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.groupingBy(Employee::getGender)));
+
+		collect.forEach((dname, gen) -> {
+			System.out.println(dname);
+			System.out.println("===========");
+
+			gen.forEach((gend, elist) -> {
+				System.out.println(gend);
+				System.out.println("-------------");
+				elist.forEach(System.out::println);
+			});
+		});
 	}
 }
