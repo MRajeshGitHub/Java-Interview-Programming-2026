@@ -28,5 +28,16 @@ public class Program38GroupEmpByCity {
 			System.out.println("------");
 			city.forEach(e -> System.out.println(e.getName() + "-----" + e.getCity()));
 		});
+
+		System.out.println("-------------------------------------------------------");
+		System.out.println("------Program 33 — Group Employees by Gender.----------");
+
+		Map<String, List<Employee>> gList = employees.stream().collect(Collectors.groupingBy(Employee::getGender));
+		gList.forEach((gen, elist) -> {
+			System.out.println(gen);
+			System.out.println("----------");
+			elist.forEach(System.out::println);
+		});
+
 	}
 }
