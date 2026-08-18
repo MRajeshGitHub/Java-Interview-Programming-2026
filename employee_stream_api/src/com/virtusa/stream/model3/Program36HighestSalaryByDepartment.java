@@ -3,7 +3,10 @@ package com.virtusa.stream.model3;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Program36HighestSalaryByDepartment {
 
@@ -23,9 +26,11 @@ public class Program36HighestSalaryByDepartment {
 
 				new Employee(105, "Priya", "Sales", 29, 60000, "Pune", "Female"));
 
-		Employee highSal = employees.stream()
-				.sorted(Comparator.comparing(Employee::getSalary, Comparator.reverseOrder())).findFirst()
-				.orElse(null);
-		System.out.println(highSal);
+		Map<String, Optional<Employee>> collect = employees.stream().collect(Collectors
+				.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+
+		collect.forEach((dept, msal) -> {
+			System.out.println(dept + "----" + msal);
+		});
 	}
 }
