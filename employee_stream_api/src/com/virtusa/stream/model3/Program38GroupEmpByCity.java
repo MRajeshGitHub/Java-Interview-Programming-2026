@@ -57,5 +57,24 @@ public class Program38GroupEmpByCity {
 				elist.forEach(System.out::println);
 			});
 		});
+
+		System.out.println("=======================================================");
+		System.out.println("  Nested Grouping — Department → Gender → City");
+
+		Map<String, Map<String, Map<String, List<Employee>>>> collect2 = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartment,
+						Collectors.groupingBy(Employee::getGender, Collectors.groupingBy(Employee::getCity))));
+		collect2.forEach((dname, val) -> {
+			System.out.println(dname);
+			val.forEach((gen, val1) -> {
+				System.out.println(gen);
+				val1.forEach((city, val2) -> {
+					System.out.println(city);
+					val2.forEach(System.out::println);
+				});
+
+			});
+		});
+
 	}
 }
