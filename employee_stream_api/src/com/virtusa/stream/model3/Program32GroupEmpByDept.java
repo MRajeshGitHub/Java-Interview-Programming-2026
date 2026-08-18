@@ -29,6 +29,16 @@ public class Program32GroupEmpByDept {
 			System.out.println("----------");
 			list.forEach(System.out::println);
 		});
+		System.out.println("----------Using filter group by department-----------");
+
+		// Using filter group by department
+
+		String dept = "IT";
+
+		List<Employee> deptList = employees.stream().filter(emp -> dept.equals(emp.getDepartment()))
+				.collect(Collectors.toList());
+
+		deptList.forEach(System.out::println);
 	}
 
 }
