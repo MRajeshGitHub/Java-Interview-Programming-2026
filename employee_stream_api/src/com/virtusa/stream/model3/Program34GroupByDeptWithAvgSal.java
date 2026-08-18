@@ -41,9 +41,9 @@ public class Program34GroupByDeptWithAvgSal {
 		deptSal.forEach((dpt, sal) -> {
 			System.out.println(dpt + "------" + sal);
 		});
-		
-		//or
-		
+
+		// or
+
 		double orElse = employees.stream().filter(emp -> dept.equals(emp.getDepartment()))
 				.mapToDouble(Employee::getSalary).average().orElse(0.0);
 
