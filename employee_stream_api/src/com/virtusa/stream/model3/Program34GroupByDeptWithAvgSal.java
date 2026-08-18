@@ -31,6 +31,23 @@ public class Program34GroupByDeptWithAvgSal {
 			System.out.println(dept + "------>" + sal);
 
 		});
+
+		System.out.println();
+		// IT average salary
+
+		String dept = "IT";
+		Map<String, Double> deptSal = employees.stream().filter(emp -> dept.equals(emp.getDepartment())).collect(
+				Collectors.groupingBy(Employee::getDepartment, Collectors.averagingDouble(Employee::getSalary)));
+		deptSal.forEach((dpt, sal) -> {
+			System.out.println(dpt + "------" + sal);
+		});
+		
+		//or
+		
+		double orElse = employees.stream().filter(emp -> dept.equals(emp.getDepartment()))
+				.mapToDouble(Employee::getSalary).average().orElse(0.0);
+
+		System.out.println(orElse);
 	}
 
 }
