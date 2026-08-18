@@ -71,6 +71,7 @@ public class Program38GroupEmpByCity {
 				val1.forEach((city, val2) -> {
 					System.out.println(city);
 					val2.forEach(System.out::println);
+					
 				});
 
 			});
