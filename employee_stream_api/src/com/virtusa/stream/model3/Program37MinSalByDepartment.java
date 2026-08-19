@@ -30,6 +30,6 @@ public class Program37MinSalByDepartment {
 			System.out.println(dept);
 			System.out.println("---------");
 			System.out.println(min);
-		}
+		});
 	}
 }
