@@ -32,6 +32,18 @@ public class Program39HighSalEechDepartment {
 			System.out.println(dept + "------" + eList.orElse(null));
 
 		});
+		System.out.println("--------Without Optional output------------");
+		System.out.println("-------------------------------------------");
+
+		// Without Optional output
+
+		Map<String, Employee> maxEmp = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.collectingAndThen(
+						Collectors.maxBy(Comparator.comparing(Employee::getSalary)), e -> e.orElse(null))));
+
+		maxEmp.forEach((dept, elist) -> {
+			System.out.println(dept + "----" + elist);
+		});
 	}
 
 }
