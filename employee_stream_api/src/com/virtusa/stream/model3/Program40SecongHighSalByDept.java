@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Program40SecongHighSalByDept {
@@ -24,12 +24,16 @@ public class Program40SecongHighSalByDept {
 				new Employee(104, "Neha", "HR", 32, 55000, "Mumbai", "Female"),
 
 				new Employee(105, "Priya", "Sales", 29, 60000, "Pune", "Female"));
-		Map<String, List<Double>> collect = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
-				Collectors.mapping(Employee::getSalary, Collectors.collectingAndThen(null, null))));
 
-		collect.forEach((dept, val) -> {
-			System.out.println(dept + "----" + val);
+		Map<String, Optional<Employee>> secondHighSalByDept = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartment,
+						Collectors.collectingAndThen(Collectors.toList(), list -> list.stream()
+								.sorted(Comparator.comparing(Employee::getSalary).reversed()).skip(1).findFirst())));
+
+		secondHighSalByDept.forEach((dept, val) -> {
+			System.out.println(dept);
+			System.out.println("-------");
+			System.out.println(val);
 		});
-
 	}
 }
