@@ -35,5 +35,20 @@ public class Program40SecongHighSalByDept {
 			System.out.println("-------");
 			System.out.println(val);
 		});
+		System.out.println("-----------------------------------------------------");
+
+		// 2nd approach
+
+		Map<String, Double> result = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
+
+				Collectors.collectingAndThen(
+
+						Collectors.mapping(Employee::getSalary, Collectors.toList()),
+
+						salaries -> salaries.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst()
+								.orElse(null))));
+
+		result.forEach((department, salary) -> System.out.println(department + " -> " + salary));
+
 	}
 }
