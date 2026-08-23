@@ -46,8 +46,8 @@ public class Program43DeptMaximumEmployees {
 		Entry<String, Long> maxDept = collect.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue))
 				.orElse(null);
 
-		System.out.println("Department : " + maxDept.getKey());//Department : IT
-		System.out.println("Employee Count : " + maxDept.getValue());//Employee Count : 4
+		System.out.println("Department : " + maxDept.getKey());// Department : IT
+		System.out.println("Employee Count : " + maxDept.getValue());// Employee Count : 4
 
 	}
 }
