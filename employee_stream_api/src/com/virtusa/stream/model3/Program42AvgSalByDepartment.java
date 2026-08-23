@@ -38,5 +38,14 @@ public class Program42AvgSalByDepartment {
 			System.out.println("-----------");
 			System.out.println(sal);
 		});
+
+		System.out.println("====================================");
+		avgDept.entrySet().stream().max(Map.Entry.comparingByValue())
+				// 3. Print the top department details
+				.ifPresent(entry -> {
+					System.out.println("Department: " + entry.getKey());
+					System.out.println("Highest Avg Salary: " + entry.getValue());
+				});
+                      //output Highest Avg Salary: 73333.33333333333
 	}
 }
