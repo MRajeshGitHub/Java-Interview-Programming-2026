@@ -2,8 +2,10 @@ package com.virtusa.stream.model3;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class Program43DeptMaximumEmployees {
@@ -37,5 +39,15 @@ public class Program43DeptMaximumEmployees {
 		collect.forEach((dept, count) -> {
 			System.out.println("Department : " + dept + "---EmployeeCount : " + count);
 		});
+
+		System.out.println("-----------------------------");
+		// max Employee by department
+
+		Entry<String, Long> maxDept = collect.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue))
+				.orElse(null);
+
+		System.out.println("Department : " + maxDept.getKey());//Department : IT
+		System.out.println("Employee Count : " + maxDept.getValue());//Employee Count : 4
+
 	}
 }
