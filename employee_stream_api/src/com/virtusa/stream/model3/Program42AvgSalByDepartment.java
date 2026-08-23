@@ -46,6 +46,6 @@ public class Program42AvgSalByDepartment {
 					System.out.println("Department: " + entry.getKey());
 					System.out.println("Highest Avg Salary: " + entry.getValue());
 				});
-                      //output Highest Avg Salary: 73333.33333333333
+		// output Highest Avg Salary: 73333.33333333333
 	}
 }
