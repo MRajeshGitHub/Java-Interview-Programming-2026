@@ -6,15 +6,14 @@ public class Program01ObjectCreation {
 
 		// Employee Object
 
-		Employee emp = new Employee(1, "Rajesh", "IT", 10000.0);
-		Employee emp1 = new Employee(1, "Rajesh", "IT", 10000.0);
+		Employee emp1 = new Employee(101, "Rahul", "IT", 50000);
 
-		System.out.println(emp == emp1);// false
-		System.out.println(emp.equals(emp1));// false
+		Employee emp2 = new Employee(101, "Rahul", "IT", 60000);
 
-		Employee emp2 = emp1;
-		System.out.println(emp1 == emp2);// true
-		System.out.println(emp1.equals(emp2));// true
+		Employee emp3 = new Employee(102, "Rahul", "IT", 50000);
+
+		System.out.println(emp1.equals(emp2));
+		System.out.println(emp1.equals(emp3));
 
 	}
 
