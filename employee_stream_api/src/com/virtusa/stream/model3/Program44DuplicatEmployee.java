@@ -2,9 +2,11 @@ package com.virtusa.stream.model3;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -42,6 +44,16 @@ public class Program44DuplicatEmployee {
 		for (int i = 0; i < employees.size() - 1; i++) {
 			if (employees.get(i).getId() == employees.get(i + 1).getId()) {
 				System.out.println(employees.get(i));
+			}
+		}
+
+		// Using HastSet
+
+		Set<Employee> unique = new HashSet<>();
+		System.out.println("Duplicate Employees is :");
+		for (Employee emp : employees) {
+			if (!unique.add(emp)) {
+				System.out.println(emp);
 			}
 		}
 
