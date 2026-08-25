@@ -24,6 +24,11 @@ public class Employee {
 	}
 
 	@Override
+	public int hashCode() {
+		return Objects.hash(id, name);
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -32,7 +37,7 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		return this.id == other.id && this.name.equals(other.name);
+		return id == other.id && Objects.equals(name, other.name);
 	}
 
 }
