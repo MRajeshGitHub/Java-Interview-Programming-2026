@@ -14,6 +14,7 @@ public class Program08HashSet {
 		employees.add("Priya");
 		employees.add("Rahul");
 		employees.add("Amit");
+employees.add("Raja");
 
 		System.out.println("Employees : " + employees);
 
