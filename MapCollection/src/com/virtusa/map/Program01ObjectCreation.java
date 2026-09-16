@@ -14,7 +14,6 @@ public class Program01ObjectCreation {
 
 		System.out.println(emp1.equals(emp3));// false
 
-		
 	}
 
 }

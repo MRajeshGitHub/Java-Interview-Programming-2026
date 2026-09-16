@@ -30,6 +30,10 @@ public class Program08HashSet {
 
 		System.out.println(employees.add("Raj"));
 
+		System.out.println(employees.add("Raj"));
+
+		System.out.println(employees.add("Rahul"));// false
+
 	}
 
 }
