@@ -19,6 +19,9 @@ public class Program01ObjectCreation {
 		System.out.println(emp1.hashCode());
 		System.out.println(emp2.hashCode());
 		System.out.println(emp3.hashCode());
+		
+		
+		
 
 	}
 
