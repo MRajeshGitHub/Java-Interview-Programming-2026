@@ -14,15 +14,7 @@ public class Program01ObjectCreation {
 
 		System.out.println(emp1.equals(emp3));// false
 
-		System.out.println("-------------------------");
-
-		System.out.println(emp1.hashCode());
-		System.out.println(emp2.hashCode());
-		System.out.println(emp3.hashCode());
 		
-		
-		
-
 	}
 
 }
