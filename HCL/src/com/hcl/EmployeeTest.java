@@ -3,6 +3,7 @@ package com.hcl;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -35,6 +36,21 @@ public class EmployeeTest {
 
 		List<Employee> ITList = list.stream().filter(i -> i.getDepartment().equals("IT")).collect(Collectors.toList());
 		ITList.forEach(System.out::println);
+
+		System.out.println("--------------Delhi employees-------------------");
+
+		List<Employee> dList = list.stream().filter(e -> e.getCity().equals("Delhi")).collect(Collectors.toList());
+
+		dList.forEach(System.out::println);
+
+		System.out.println("---------Name starts with \"A\"------------------------");
+
+		List<Employee> startA = list.stream().filter(e -> e.getName() != null && e.getName().startsWith("A"))
+				.collect(Collectors.toList());
+
+		startA.forEach(System.out::println);
+
+		System.out.println("-----------Name ends with \"n\"----------------------");
 
 	}
 
