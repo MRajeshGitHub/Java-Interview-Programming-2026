@@ -36,6 +36,16 @@ public class EmploteeTest {
 				.collect(Collectors.toList());
 
 		list2.forEach(System.out::println);
+		
+
+		System.out.println("------------------Program 3 — Delhi Employees-------------------------");
+
+		List<Employee> list3 = employees.stream().filter(emp -> "Delhi".equalsIgnoreCase(emp.getCity()))
+				.collect(Collectors.toList());
+
+		list3.forEach(System.out::println);
+		
+		
 
 	}
 }
