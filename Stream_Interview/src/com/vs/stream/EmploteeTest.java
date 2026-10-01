@@ -28,5 +28,14 @@ public class EmploteeTest {
 		List<Employee> list = employees.stream().filter(emp -> emp.getAge() > 30).collect(Collectors.toList());
 		list.forEach(System.out::println);
 
+		System.out.println("-----------------------------------------------------------------------");
+
+		// Program 2 — IT Department Employees
+
+		List<Employee> list2 = employees.stream().filter(emp -> emp.getDepartment().equals("IT"))
+				.collect(Collectors.toList());
+
+		list2.forEach(System.out::println);
+
 	}
 }
