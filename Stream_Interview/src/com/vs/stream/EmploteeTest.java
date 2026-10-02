@@ -36,7 +36,6 @@ public class EmploteeTest {
 				.collect(Collectors.toList());
 
 		list2.forEach(System.out::println);
-		
 
 		System.out.println("------------------Program 3 — Delhi Employees-------------------------");
 
@@ -44,8 +43,12 @@ public class EmploteeTest {
 				.collect(Collectors.toList());
 
 		list3.forEach(System.out::println);
-		
-		
 
+		System.out.println("--------------Program 4 — Name starts with \"A\"-----------------------");
+
+		List<Employee> list4 = employees.stream().filter(emp -> emp.getName().startsWith("A"))
+				.collect(Collectors.toList());
+
+		list4.forEach(System.out::println);
 	}
 }
