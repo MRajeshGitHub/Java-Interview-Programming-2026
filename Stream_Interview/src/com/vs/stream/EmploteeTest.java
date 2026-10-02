@@ -64,5 +64,18 @@ public class EmploteeTest {
 
 		list6.forEach(System.out::println);
 
+		System.out.println("------------------Program 7 — Male Employees---------------------------");
+
+		List<Employee> list7 = employees.stream().filter(e -> "Male".equalsIgnoreCase(e.getGender()))
+				.collect(Collectors.toList());
+
+		list7.forEach(System.out::println);
+
+		System.out.println("------------Program 8 — Female Employees-------------------------");
+
+		List<Employee> list8 = employees.stream().filter(e -> "Female".equalsIgnoreCase(e.getGender()))
+				.collect(Collectors.toList());
+		list8.forEach(System.out::println);
+
 	}
 }
