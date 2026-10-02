@@ -50,5 +50,11 @@ public class EmploteeTest {
 				.collect(Collectors.toList());
 
 		list4.forEach(System.out::println);
+
+		System.out.println("----------------------Program 5 — Name ends with \"n\"-------------------");
+
+		List<Employee> list5 = employees.stream().filter(e -> e.getName().endsWith("n")).collect(Collectors.toList());
+
+		list5.forEach(System.out::println);
 	}
 }
