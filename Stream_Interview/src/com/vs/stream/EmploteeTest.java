@@ -56,5 +56,13 @@ public class EmploteeTest {
 		List<Employee> list5 = employees.stream().filter(e -> e.getName().endsWith("n")).collect(Collectors.toList());
 
 		list5.forEach(System.out::println);
+
+		System.out.println("------------Program 6 — Salary between 30K–80K------------------------");
+
+		List<Employee> list6 = employees.stream().filter(e -> e.getSalary() > 30000 && e.getSalary() < 80000)
+				.collect(Collectors.toList());
+
+		list6.forEach(System.out::println);
+
 	}
 }
