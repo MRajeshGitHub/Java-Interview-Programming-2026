@@ -1,5 +1,6 @@
 package com.vs.stream;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -77,5 +78,11 @@ public class EmploteeTest {
 				.collect(Collectors.toList());
 		list8.forEach(System.out::println);
 
+		System.out.println("------------Program 10 — Sort by Name------------------------------");
+
+		List<Employee> list10 = employees.stream().sorted(Comparator.comparing(Employee::getName))
+				.collect(Collectors.toList());
+
+		list.forEach(System.out::println);
 	}
 }
