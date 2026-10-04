@@ -90,5 +90,13 @@ public class EmploteeTest {
 				.collect(Collectors.toList());
 
 		list11.forEach(System.out::println);
+
+		System.out.println("----------------Program 12 — Sort by Age----------------------------------");
+
+		List<Employee> list12 = employees.stream().sorted(Comparator.comparing(Employee::getAge))
+				.collect(Collectors.toList());
+
+		list12.forEach(System.out::println);
+
 	}
 }
