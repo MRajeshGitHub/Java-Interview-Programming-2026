@@ -84,5 +84,11 @@ public class EmploteeTest {
 				.collect(Collectors.toList());
 
 		list.forEach(System.out::println);
+		System.out.println("------------Program 11 — Sort by Salary------------------------------");
+
+		List<Employee> list11 = employees.stream().sorted(Comparator.comparingDouble(Employee::getSalary))
+				.collect(Collectors.toList());
+
+		list11.forEach(System.out::println);
 	}
 }
