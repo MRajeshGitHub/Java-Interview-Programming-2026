@@ -98,5 +98,10 @@ public class EmploteeTest {
 
 		list12.forEach(System.out::println);
 
+		System.out.println("----------------------Program 13 — Descending Salary---------------");
+
+		List<Employee> list13 = employees.stream().sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+				.collect(Collectors.toList());
+		list13.forEach(System.out::println);
 	}
 }
